@@ -1,0 +1,275 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आजरा साखर कारखाना - Home</title>
+    <link rel="stylesheet" href="/dashboard/demo.css">
+    <link rel="stylesheet" href="/dashboard/footer.css">
+    
+
+    <!--Important link source from https://bootsnipp.com/snippets/ooa9M-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
+
+
+
+</head>
+
+<!-- वसंतराव देसाई आजरा शेतकरी सहकारी साखर कारखाना  लि. अमृतनगर-गवसे -->
+
+<body>
+    <!-- <header>
+        <div class="header">
+            
+            <h1>वसंतराव देसाई आजरा शेतकरी सहकारी साखर कारखाना  लि, कोल्हापूर</h1>
+            
+
+        </div>
+
+        <div class="company-info">
+            <p>Address: Ajra Gavase, Kolhapur 416509</p>
+            <p>Phone: (023)2324 7516 | Email: ajrasakarcarkhana@gmail.com</p>
+        </div>
+
+    </header> -->
+    <header>
+        <div class="header">
+            <h1 style="font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; color: #ffffff; margin-bottom: 2px; padding-top: 12px;">
+                वसंतराव देसाई आजरा शेतकरी सहकारी साखर कारखाना  लि, कोल्हापूर</h1>
+            <!-- Vasanthrao Desai Ajra Agricultural Cooperative Sugar Factory Ltd., Amritnagar-Gavase -->
+    
+        </div>
+    
+        <div class="company-info" style="font-family: sans-serif,Arial ; font-size: 10px; color: #f5f5f5;">
+            <p class="Address1">Address: Ajra Gavase, Kolhapur 416509</p>
+            <p>Contact: (023)2324 7516 | Email: ajrasakarcarkhana@gmail.com</p>
+            
+        </div>
+    </header>
+
+    <div class="navbar">
+        <a href="/dashboard/home.html">Home</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Excel-sheet</a>
+        <a href="/login-page/login.html" class="logout" onclick="return confirm('Are you sure want to Logout!')"  >Logout</a>
+    </div>
+
+    <main>
+        
+        <div class="main-content">
+            <div class="form-container">
+                <form action="/add" method="POST">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required><br>
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" step="0.01" required><br>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required><br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required><br>
+                    <button class="submit" type="submit">Add Expense</button>
+                </form>
+                <!-- Your form content here -->
+            </div>
+
+            <div class="logo-container">
+                <img src="/login-page/bg-imgs/logo.jpg" alt="Company Logo" class="logo">
+            </div>
+
+            <div class="expense-tracker">
+                <table border="1" class="exptracker">
+                    <tr>
+                        <th colspan="2">Expense Tracker</th>
+                    </tr>
+                    <tr>
+                        <th>Today's Expense</th>
+                        <th>Month's Expense</th>
+                    </tr>
+                    <tr>
+                        <td>{{ today_expense }}</td>
+                        <td>{{ this_month_expense }}</td>
+                    </tr>
+                </table>
+                <!-- Your expense tracker content here -->
+            </div>
+        </div>
+    
+        <div class="my-expense">
+            <table border="1" class="my-expense">
+                <tr>
+                    
+                    <th colspan="5">MY Expenses</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+                {% for expense in expenses %}
+                <tr>
+                    <td>{{ expense[1] }}</td>
+                    <td>{{ expense[2] }}</td>
+                    <td>{{ expense[3] }}</td>
+                    <td>{{ expense[4] }}</td>
+                    <td>
+                        <a href="/edit/{{ expense[0] }}">Edit</a>|
+                        <a href="/delete/{{ expense[0] }}" onclick="return confirm('Are you sure you want to delete this expense?')">Delete</a>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <!-- Your main table (my expense) content here -->
+        </div>
+    
+
+
+
+
+        
+        
+        
+    
+        
+    
+        
+        
+    </main>
+
+
+
+    <!-- <footer>
+        
+            <img class="logo" src="/login-page/bg-imgs/logo.jpg" alt="Company Logo">
+            <div class="Details">
+                <p>वसंतराव देसाई आजरा शेतकरी सहकारी साखर कारखाना  लि.</p>
+                <p> &copy; All rights reserved | Ajra Gavase, Kolhapur 416509</p>
+                <p>For support, Phone: (023)2324 7516 | Email: ajrasakarcarkhana@gmail.com</p>
+            </div>
+        
+    </footer> -->
+
+
+       
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<footer id="dk-footer" class="dk-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="dk-footer-box-info">
+                        <a href="index.html" class="footer-logo">
+                            <img src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_960_720.png" alt="footer_logo" class="img-fluid">
+                        </a>
+                        <p class="footer-info-text">
+                            वसंतराव देसाई आजरा शेतकरी सहकारी साखर कारखाना  लि. अमृतनगर-गवसे                        
+                    </div>
+                    <!-- End Footer info -->
+                    
+                </div>
+                <!-- End Col -->
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-us">
+                                <div class="contact-icon">
+                                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>Ajra, Kolhapur</h3>
+                                  <span class="animate-border border-black"></span>
+                                    <p>5353 Road Avenue</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                        <div class="col-md-6">
+                            <div class="contact-us contact-us-last">
+                                <div class="contact-icon">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>(023)2324 7516</h3>
+                                  <span class="animate-border border-black"></span>
+                                    <p>Give us a call</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Contact Row -->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget footer-left-widget">
+                                <div class="section-heading">
+                                    <h3>Useful Links</h3>
+                                    
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Projects</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Team</a>
+                                    </li>
+                                </ul>
+                               
+                            </div>
+                            <!-- End Footer Widget -->
+                        </div>
+                        <!-- End col -->
+                        
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Widget Row -->
+        </div>
+        <!-- End Contact Container -->
+
+
+        <div class="copyright">
+            <div class="container1">
+                <div class="row">
+                    <div class="col">
+                        <span>Copyright © 2019, All Right Reserved Seobin</span>
+                    </div>
+                    
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Copyright Container -->
+        </div>
+        
+</footer>
+
+    
+
+</body>
+
+</html>
