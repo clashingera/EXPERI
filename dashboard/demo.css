@@ -13,7 +13,7 @@ body {
 
 /* header part */
 header {
-    background: url('dashboard/banner2.jpg') center/80% auto repeat-x; /* Center the image, cover 80% width, and repeat horizontally */
+    background: url('banner2.jpg') center/80% auto repeat-x; /* Center the image, cover 80% width, and repeat horizontally */
     color: #fff;
     text-align: center;
     height: 110px;
@@ -75,7 +75,7 @@ header {
     left: 0;
     width: 100%;
     height: 95%;
-    background-image: url('dashboard/sugar-cane.jpg');
+    background-image: url('sugar-cane.jpg');
     background-size: 36% 100%; /* Cover height and repeat x */
     border-radius: 43px;
     background-repeat: repeat-x; /* Repeat image horizontally */
