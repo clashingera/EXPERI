@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // You should replace this condition with your actual login logic
         if (username === "A" && password === "A") {
             
-            window.location.href = "/dashboard/home.html";
+            window.location.href = "dashboard/home.html";
         } else {
             alert("Invalid username or password. Please try again.");
         }
