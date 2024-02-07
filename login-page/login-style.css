@@ -8,7 +8,7 @@ body, h1, h2, p, input, button {
 
 body.login-body {
     font-family: 'Arial', sans-serif;
-    background: url('login-page/bg-imgs/login-bg.jpg') no-repeat center center fixed;
+    background: url('bg-imgs/login-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
